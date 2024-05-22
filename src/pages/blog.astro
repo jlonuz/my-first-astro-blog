@@ -1,25 +1,23 @@
 ---
-
+const pageTitle = "Mi blog de aprendizaje";
 ---
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Inicio</a>
+    <a href="/about/">Sobre mi</a>
+    <a href="/blog/">Blog</a>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Blog</title>
-	</head>
-	<body>
-        <a href="/">Inicio</a>
-        <a href="/about/">Sobre mi</a>
-        <a href="/blog">Mi blog</a>
-
-        <h1>Mi blog de Astro aprendizaje</h1>
-        <h2>... ¡y mi nuevo sitio Astro!</h2>
-
-        <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
-
-        <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
-      </body>
+    <h1>{pageTitle}</h1>
+    <p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro./p>
+    <ul>
+      <li><a href="/posts/post-1/">Publicación 1</a></li>
+      <li><a href="/posts/post-2/">Publicación 2</a></li>
+      <li><a href="/posts/post-3/">Publicación 3</a></li>
+    </ul>
+  </body>
 </html>
