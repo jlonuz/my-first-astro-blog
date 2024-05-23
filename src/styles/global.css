@@ -28,11 +28,12 @@ h1 {
 }
 
 .hamburger .line {
-  display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #3495cde9;
+    display: block;
+    width: 20px;
+    height: 4px;
+    margin-bottom: 3px;
+    background-color: #3495cde9;
+    border-radius: 3px;
 }
 
 .nav-links {
