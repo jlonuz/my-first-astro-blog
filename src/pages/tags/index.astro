@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allPosts = await Astro.glob('../posts/*.md');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const pageTitle = "Indice de etiquetas";
+
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="tags">
+        { tags.map(( tag ) => <p class="tag"><a href={`/tags/${tag}`}> { tag } </a></p>)}
+    </div>
+</BaseLayout>
+
+<style>
+    a {
+      color: #00539F;
+      text-decoration: none;
+      padding: 3px 8px;
+      &:hover {
+        background-color: orange;
+      }
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .tag {
+      margin: 0.25em;
+      border: solid 1px #a1a1a1;
+      font-size: 1.15em;
+      background-color: #F8FCFD;
+      cursor: pointer;
+    }
+
+    .tag a:focus {
+        background-color: red;
+      }
+  </style>

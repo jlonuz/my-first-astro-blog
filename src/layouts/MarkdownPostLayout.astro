@@ -2,21 +2,45 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title}>
-<p>Pubblicado el: {frontmatter.pubDate.toString().slice(0,10)}</p>
-<p><em>{frontmatter.description}</em></p>
-<p>Escrito por: {frontmatter.author}</p>
-<a href="/blog">Volver a blog</a>
+<BaseLayout pageTitle={frontmatter.title} >
+    <p>Pubblicado el: {frontmatter.pubDate.toString().slice(0,10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <p>Escrito por: {frontmatter.author}</p>
+    <a href="/blog">Volver a blog</a>
 
-<br>
-<br>
-<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-<slot />
+    <br>
+    <br>
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <slot />
 
-<p>Etiquetas:
-    {frontmatter.tags.map(tag =>
-        <span><strong>{tag}</strong> · </span>
-    )}
-</p>
+    <div class="tags">Etiquetas:
+        { frontmatter.tags.map(( tag ) => <p class="tag"><a href={`/tags/${tag}`}> { tag } </a></p>)}
+    </div>
+
 
 </BaseLayout/>
+
+
+<style>
+  a {
+    color: #00539F;
+    text-decoration: none;
+    padding: 3px 8px;
+    &:hover {
+        background-color: orange;
+    }
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: solid 1px #a1a1a1;
+    font-size: 1.15em;
+    background-color: #F8FCFD;
+  }
+</style>
