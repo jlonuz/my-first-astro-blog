@@ -4,7 +4,7 @@ const pageTitle = "Sobre mi";
 
 const identity = {
   firstName: "Josefina",
-  avatar: "https://jlonuz.com/img/yoenniebla.jpg",
+  avatar: '/public/lab-profile.jpeg',
   country: "Chile",
   occupation: "Frontend developer",
   hobbies: ["Animal flow", "Kandyan dance", "Make videos"],
@@ -22,7 +22,7 @@ const fontWeight = "bold"
 const textCase = "uppercase"
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <img src={identity.avatar} width=200/>
+    <img src={identity.avatar} width="200" alt="">
 
     <p>He aquí algunos datos sobre mí:</p>
     <ul>
