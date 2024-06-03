@@ -4,7 +4,7 @@ html {
 }
 
 html.dark {
-  background-color: #0d0950;
+  background-color: #262424;
   color: #fff;
 }
 
@@ -12,10 +12,14 @@ html.dark {
   color: #fff;
 }
 
+.dark .hamburger .line {
+  background-color: #fff;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
+  max-width: 100ch;
   padding: 1rem;
   line-height: 1.5;
 }
@@ -24,12 +28,24 @@ body {
   box-sizing: border-box;
 }
 
+#logo .darktheme {
+ display: none;
+}
+
+.dark #logo .darktheme {
+  display: inline;
+}
+.dark #logo .lighttheme {
+  display: none;
+}
+
+
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
 }
 
-/* estilos de la barra de navegación*/
+
 /* estilos de la barra de navegación*/
 .hamburger {
   padding-right: 20px;
@@ -37,14 +53,26 @@ h1 {
 }
 
 .hamburger .line {
-    display: block;
-    width: 20px;
-    height: 4px;
-    margin-bottom: 3px;
-    background-color: #3495cde9;
-    border-radius: 3px;
+  display: block;
+  width: 20px;
+  height: 4px;
+  margin-bottom: 3px;
+  background-color: #000;
+  border-radius: 3px;
 }
 
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar-icons-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .nav-links {
   width: 100%;
   top: 5rem;
@@ -70,11 +98,16 @@ h1 {
 
 .expanded {
   display: unset;
+  /* background-color: #ededed; */
 }
 
 @media screen and (min-width: 636px) {
+
+  .nav-container {
+    flex-direction: row;
+  }
   .nav-links {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: block;
     position: static;
     width: auto;
@@ -88,6 +121,9 @@ h1 {
 
   .hamburger {
     display: none;
+  }
+  .navbar-icons-row {
+    justify-content: end;
   }
 }
 

@@ -4,9 +4,16 @@ import Navigation from "./Navigation.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 <header>
-    <nav>
-        <Hamburger/>
-        <ThemeIcon/>
+    <nav class="nav-container">
+        <div class="navbar-icons-row">
+            <ThemeIcon/>
+            <div id="logo">
+                <img class="darktheme" src="/logo_invert.png" width="100px"/>
+                <img class="lighttheme" src="/logo.png" width="100px"/>
+            </div>
+            <Hamburger/>
+        </div>
         <Navigation/>
+
     </nav>
 </header>
