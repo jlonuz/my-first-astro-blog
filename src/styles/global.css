@@ -1,5 +1,5 @@
 html {
-  background-color: #f1f5f9;
+  /* background-color: #f1f5f9; */
   font-family: sans-serif;
 }
 
@@ -15,11 +15,14 @@ html.dark {
 .dark .hamburger .line {
   background-color: #fff;
 }
+.dark body {
+  background-color: #262424;
+}
 
 body {
-  margin: 0 auto;
+  margin: 0 auto !important;
   width: 100%;
-  max-width: 100ch;
+  max-width: 120ch;
   padding: 1rem;
   line-height: 1.5;
 }
