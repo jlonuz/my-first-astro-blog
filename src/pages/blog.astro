@@ -1,12 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 const allPosts = await Astro.glob('../pages/posts/*.md');
-const pageTitle = "Mi blog de aprendizaje de Astro"
+const pageTitle = "Mis publicaciones recientes"
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <p>Aquí es donde publicaré sobre mi viaje de aprendizaje de Astro.</p>
-  <ul>
-    {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
-  </ul>
+    <ul class="grid gap-4 mt-4 md:grid-cols-2 lg:grid-cols-4">
+    {
+      allPosts.map((post) =>
+        <Card>
+          <CardHeader>
+            <CardTitle> <BlogPost url={post.url} title={post.frontmatter.title}/></CardTitle>
+            <CardDescription>Leer más...</CardDescription>
+          </CardHeader>
+        </Card>
+      )
+    }
+    </ul>
 </BaseLayout>
+
