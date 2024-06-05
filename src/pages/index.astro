@@ -1,14 +1,61 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import CardsFeatures from '../components/CardsFeatures.astro';
 
 
 
-const pageTitle = "";
+
+
+const pageTitle = "Bienvenido a mi sitio web";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <Hero/>
+  <section class="container mx-auto px-4 py-16">
+    <h1 class="text-3xl font-bold mb-4 text-center">Quien soy</h1>
+    <div class="flex flex-col md:flex-row items-center md:space-x-8">
+      <!-- Imagen -->
+      <div class="md:w-1/3 mb-8 md:mb-0">
+        <img src="/yoenniebla.jpg" height="200" width="300" alt="About Us" class="rounded-lg shadow-lg">
+      </div>
+
+      <!-- Descripción y lista -->
+      <div class="md:w-2/3">
+        <p class="mb-6"><em>
+          Música con estudios formales en acordeón, y manejo intermedio de otros instrumentos musicales. Artista plástica y manual con dominio de técnicas de tejido, mosaico, macramé, reciclaje y arte terapia. Artista audiovisual con experiencia en videos institucionales, matrimonios, video clips y video arte. Desarrolladora web con experiencia en ecommerce, portafolios y aplicaciones web. Bailarina y percusionista de Danza Kandyan. Masajista.</em></p>
+        </p>
+        <p>A lo largo de mi vida me he ido dando cuenta que me gustan muchas cosas Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non in, aliquam maiores esse consequuntur provident? Temporibus et distinctio tenetur aliquam doloremque doloribus id voluptate, iste iure culpa cumque molestias blanditiis!</p>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Innovación y creatividad en cada proyecto</li>
+          <li>Compromiso con la excelencia y la calidad</li>
+          <li>Personalizado</li>
+          <li>Orientación al cliente y sus necesidades</li>
+        </ul>
+        <!-- <ul>
+          {skills.map((skill) => <li class="skill">{skill}</li>)}
+          </ul> -->
+      </div>
+    </div>
+  </section>
+  <h2 class="text-3xl font-bold mb-4 text-center">Servicios</h2>
+  <CardsFeatures/>
+  <section class="container mx-auto px-4 py-16">
+    <div class="flex flex-col md:flex-row items-center md:space-x-8">
+      <!-- Descripción y lista -->
+      <div class="md:w-2/3 p-6 text-center md:text-left">
+        <h2 class="text-3xl font-bold mb-4">Cuéntame tu idea 💡</h2>
+        <p class="mb-6">
+            Te invito a escribirme para poder agendar una reunión en donde podremos conocernos y conversar sobre lo que tienes en mente, lo que imaginas, tus expectativas y así encontrar la mejor opción para concretar tu proyecto.
+        </p>
+        <a href="mailto:lonuz.j@gmail.com" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Enviar correo</a>
 
 
+      </div>
+       <!-- Imagen -->
+       <div class="md:w-1/3 mb-8 md:mb-0">
+        <img src="/bikerain.jpeg" height="200" width="300" alt="About Us" class="rounded-lg shadow-lg">
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
