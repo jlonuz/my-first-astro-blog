@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const images = [
+  '/recibir.jpg',
+  '/delfuegolaflor.jpg',
+  '/arbol-globos.jpg',
+  '/corazon.jpg',
+  '/encuentro.jpg',
+  '/falling-birds.jpeg',
+  '/granado.jpeg',
+  '/rocket.jpeg',
+  '/ser-soplando.jpeg',
+  '/union-musical.jpeg',
+  '/acuarela.jpg',
+  '/conexion.jpg',
+  '/compa.jpg',
+  '/enmipechopajaros.jpg',
+  '/lapiz.jpg',
+  '/masacre-de-mi-arbol.jpg',
+  '/me-entierro.jpg',
+  '/mundos-internos.jpg',
+  '/nubeojos.jpg',
+  '/perros.jpg',
+  '/picaflor.jpg',
+  '/arbol-navegante.jpg',
+  '/bete-arbol.jpg',
+  '/jardin.jpg',
+  '/puntitos.jpg',
+  '/ser-flauta.jpg',
+  '/ser-acuatico.jpg',
+  '/ser-jirafa.jpg',
+  '/ser-soplando.jpg',
+];
+
+const pageTitle = "Kandyan dancer";
+---
+<BaseLayout>
+    <div class="servicio-header">
+        <h1>Este es la página del <strong> {pageTitle}</strong></h1>
+        <span><a href="/#servicios">Volver a servicios</a></span>
+    </div>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-6">Galería de Imágenes</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {images.map((src) => (
+            <div class="overflow-hidden rounded-lg shadow-lg">
+              <img src={src} alt="Gallery Image" class="w-full h-full object-cover"/>
+            </div>
+          ))}
+        </div>
+      </div>
+</BaseLayout>
+
+<style>
+    .servicio-header {
+        display: flex;
+        justify-content: space-between;
+        & a {
+            text-decoration: underline;
+        }
+    }
+</style>

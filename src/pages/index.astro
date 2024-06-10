@@ -3,10 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CardsFeatures from '../components/CardsFeatures.astro';
 
-
-
-
-
 const pageTitle = "Bienvenido a mi sitio web";
 ---
 <BaseLayout pageTitle={pageTitle}>
@@ -37,7 +33,7 @@ const pageTitle = "Bienvenido a mi sitio web";
       </div>
     </div>
   </section>
-  <h2 class="text-3xl font-bold mb-4 text-center">Servicios</h2>
+  <h2 id="servicios" class="text-3xl font-bold mb-4 text-center">Servicios</h2>
   <CardsFeatures/>
   <section class="container mx-auto px-4 py-16">
     <div class="flex flex-col md:flex-row items-center md:space-x-8">

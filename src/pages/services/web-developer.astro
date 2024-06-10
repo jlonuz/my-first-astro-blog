@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Web developer";
+---
+<BaseLayout>
+    <div class="servicio-header">
+        <h1>Este es la página del <strong> {pageTitle}</strong></h1>
+        <span><a href="/#servicios">Volver a servicios</a></span>
+    </div>
+</BaseLayout>
+
+<style>
+    .servicio-header {
+        display: flex;
+        justify-content: space-between;
+        & a {
+            text-decoration: underline;
+        }
+    }
+</style>

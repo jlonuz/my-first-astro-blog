@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Wellness massage";
+---
+<BaseLayout>
+    <div class="servicio-header">
+        <h1>Este es la página del <strong> {pageTitle}</strong></h1>
+        <span><a href="/#servicios">Volver a servicios</a></span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <img class="my-4" src="/dia-del-padre.jpg" alt="Flyer sibre masaje de bienestar"/>
+        <img class="my-4" src="/Experiencia_bienestar_parejas.jpg"  alt="Flyer sobre experiencia de bienestar para parejas">
+    </div>
+
+</BaseLayout>
+
+<style>
+    .servicio-header {
+        display: flex;
+        justify-content: space-between;
+        & a {
+            text-decoration: underline;
+        }
+    }
+</style>

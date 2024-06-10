@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const videos = [
+    //Kandyna
+    'https://www.youtube.com/watch?v=AF1Rgr8hh4M',
+    // Sseba Cordova Sunset Sounds
+    'https://youtu.be/i373BO_G3u4?si=7sNZNBMb-8lwz-Qk',
+    // Cami del Mar
+    'https://youtu.be/MIJADe1yI80?si=ghp6EOrM9Iar1eXe',
+    // Charles Choice Sunset Sounds
+    'https://youtu.be/nl06dW_KF_o?si=jFs0DmV99SO5804n',
+    // Stand Briyaki
+    'https://www.youtube.com/watch?v=qdKogXCqQ1o',
+    // Rosa Alada
+    'https://www.youtube.com/watch?v=gZjcRZ_61AE',
+];
+
+const pageTitle = "Video maker";
+---
+<BaseLayout>
+    <div class="servicio-header">
+        <h1>Este es la página del <strong> {pageTitle}</strong></h1>
+        <span><a href="/#servicios">Volver a servicios</a></span>
+    </div>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-6">Galería de Videos</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {videos.map((src, index) => (
+            <div class="overflow-hidden rounded-lg shadow-lg">
+              <iframe class="w-full h-64 cursor-pointer" src={src} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen onclick={`openModal(${index})`}></iframe>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 hidden">
+        <div class="relative bg-white rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-1/2">
+          <button class="absolute top-2 right-2 text-white" onclick="closeModal()">X</button>
+          <iframe id="modal-video" class="w-full h-96" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- <script>
+        const videos = JSON.stringify(videos);
+        function openModal(index) {
+          const modal = document.getElementById('modal');
+          const modalVideo = document.getElementById('modal-video');
+          modalVideo.src = videos[index];
+          modal.classList.remove('hidden');
+        }
+        function closeModal() {
+          const modal = document.getElementById('modal');
+          const modalVideo = document.getElementById('modal-video');
+          modal.classList.add('hidden');
+          modalVideo.src = '';
+        }
+      </script> -->
+</BaseLayout>
+
+<style>
+    .servicio-header {
+        display: flex;
+        justify-content: space-between;
+        & a {
+            text-decoration: underline;
+        }
+    }
+</style>

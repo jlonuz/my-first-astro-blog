@@ -7,117 +7,44 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+
+const services =[
+  "Web developer",
+  "Video maker",
+  "Kandyan dancer",
+  // "Drawing artist",
+  "Wellness massage",
+  // "Photographer amateur",
+  // "The voice of the Utero instructor",
+  // "Musician",
+  // "Acordeonist"
+]
+
+const { title, url } = Astro.props;
+
 ---
 
-<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-    <Card>
-      <CardHeader>
-        <CardTitle>Web developer</CardTitle>
-        <CardDescription>Frontend</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
-    </Card>
-    <Card>
-      <CardHeader>
-        <CardTitle>Video maker</CardTitle>
-        <CardDescription>Card Description</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
-    </Card>
-    <Card>
-      <CardHeader>
-        <CardTitle>Kandyan dancer</CardTitle>
-        <CardDescription>and kandyan teacher</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
-    </Card>
-    <Card>
-        <CardHeader>
-            <CardTitle>Drawing artist</CardTitle>
-            <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
+<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+  {
+    services.map(service => (
+      // si service tiene espacio, reemplazarlos por un guión para la url /services/${service.replace(/\s/g, '-')
+      <a href={`/services/${service.replace(/\s/g, '-').toLocaleLowerCase() }`}>
+        <Card>
+          <CardHeader>
+            <CardTitle>{service}</CardTitle>
+            <CardDescription></CardDescription>
+          </CardHeader>
+          <CardContent>
             <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
+          </CardContent>
+          <CardFooter>
             <p>Card Footer</p>
-        </CardFooter>
-    </Card>
-    <Card>
-        <CardHeader>
-            <CardTitle>Wellness massages</CardTitle>
-            <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-            <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-            <p>Card Footer</p>
-        </CardFooter>
-    </Card>
-    <Card>
-        <CardHeader>
-            <CardTitle>Amateur photographer</CardTitle>
-            <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-            <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-            <p>Card Footer</p>
-        </CardFooter>
-    </Card>
-    <Card>
-        <CardHeader>
-            <CardTitle>The voice of the Utero instructor</CardTitle>
-            <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-            <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-            <p>Card Footer</p>
-        </CardFooter>
-    </Card>
-    <Card>
-        <CardHeader>
-            <CardTitle>Musician</CardTitle>
-            <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-            <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-            <p>Card Footer</p>
-        </CardFooter>
-    </Card>
-    <Card>
-        <CardHeader>
-            <CardTitle>Acordeonist</CardTitle>
-            <CardDescription>and multi instrumentalist
-            </CardDescription>
-        </CardHeader>
-        <CardContent>
-            <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-            <p>Card Footer</p>
-        </CardFooter>
-    </Card>
+          </CardFooter>
+        </Card>
+      </a>
+      )
+    )
+  }
+
 </div>
 <!-- hsl(222.2deg 6.2% 18.96%) -->
