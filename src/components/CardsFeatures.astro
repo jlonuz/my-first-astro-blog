@@ -9,10 +9,10 @@ import {
 } from "@/components/ui/card"
 
 const services =[
-  "Web developer",
+  // "Web developer",
   "Video maker",
-  "Kandyan dancer",
-  // "Drawing artist",
+  // "Kandyan dancer",
+  "Drawing artist",
   "Wellness massage",
   // "Photographer amateur",
   // "The voice of the Utero instructor",
@@ -24,7 +24,7 @@ const { title, url } = Astro.props;
 
 ---
 
-<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
   {
     services.map(service => (
       // si service tiene espacio, reemplazarlos por un guión para la url /services/${service.replace(/\s/g, '-')
