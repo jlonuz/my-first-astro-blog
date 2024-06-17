@@ -70,12 +70,12 @@ h1 {
   justify-content: space-between;
 }
 
-.navbar-icons-row {
+/* .navbar-icons-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
+} */
 .nav-links {
   width: 100%;
   top: 5rem;
@@ -87,7 +87,7 @@ h1 {
 
 .nav-links a {
   display: block;
-  text-align: center;
+  text-align: left;
   padding: 10px 0;
   text-decoration: none;
   font-size: 1.2rem;
@@ -119,7 +119,7 @@ h1 {
 
   .nav-links a {
     display: inline-block;
-    padding: 15px 20px;
+    padding: 5px;
   }
 
   .hamburger {
