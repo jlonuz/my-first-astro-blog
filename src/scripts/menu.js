@@ -1,5 +1,4 @@
 
-
 document.addEventListener('astro:page-load', () => {
   document
     .querySelector('.hamburger')

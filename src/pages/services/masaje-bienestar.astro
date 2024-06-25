@@ -1,12 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const pageTitle = "Wellness massage";
+const pageTitle = "Masaje bienestar";
 ---
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
     <div class="servicio-header">
-        <h1>Este es la página del <strong> {pageTitle}</strong></h1>
-        <span><a href="/#servicios">Volver a servicios</a></span>
+        <span><a href="/services">Volver a servicios</a></span>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -18,8 +17,7 @@ const pageTitle = "Wellness massage";
 
 <style>
     .servicio-header {
-        display: flex;
-        justify-content: space-between;
+        text-align: right;
         & a {
             text-decoration: underline;
         }

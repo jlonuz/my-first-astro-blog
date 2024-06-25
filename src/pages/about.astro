@@ -1,5 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Service from '../components/Service';
+
+
+const hobbies =[
+  {name: "Ilustradora", description: "Esta es la descripción de mi área ilustradora"},
+  {name: "Fotógrafa", description: "Esta es la descripción de mis fotos"},
+  {name: "Modelo", description: "Esta es la descripción de modelo"},
+]
+
 const pageTitle = "Sobre mi";
 
 const identity = {
@@ -10,7 +19,7 @@ const identity = {
   hobbies: ["Animal flow", "Kandyan dance", "Make videos"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Premiere Pro", "Canva"];
+const skills = ["HTML", "CSS", "JavaScript", "React", "Tailwind", "Typescript", "Node","Astro", "Premiere Pro", "Canva"];
 
 // Css variables
 const skillColor = "rgba(28, 134, 220, 0.789)";
@@ -31,13 +40,21 @@ const textCase = "uppercase"
         <p class="mb-6"><em>
           Música con estudios formales en acordeón, y manejo intermedio de otros instrumentos musicales. Artista plástica y manual con dominio de técnicas de tejido, mosaico, macramé, reciclaje y arte terapia. Artista audiovisual con experiencia en videos institucionales, matrimonios, video clips y video arte. Desarrolladora web con experiencia en ecommerce, portafolios y aplicaciones web. Bailarina y percusionista de Danza Kandyan. Masajista.</em></p>
         </p>
-        <p>A lo largo de mi vida me he ido dando cuenta que no puedo dedicarme a una sola cosa. He luchado mucho con esto ...</p>
+        <div class="grid gap-4 md:grid-cols-3 lg:grid-cols-3">
+        {
+          hobbies.map(hobbie => (
+            <Service service={hobbie}/>
+            )
+          )
+        }
+        </div>
+        <!-- <p>Hola mi nombre es josefina, y a lo largo de mi vida he ido desarrollando distintos talentos. Desde pequeña estuve ligada al arte, a la música principalmente, aprendiendo a tocar guitarra y acordeón </p>
         <ul class="list-disc list-inside space-y-2">
           <li>Innovación y creatividad en cada proyecto</li>
           <li>Compromiso con la excelencia y la calidad</li>
           <li>Personalizado</li>
           <li>Orientación al cliente y sus necesidades</li>
-        </ul>
+        </ul> -->
         <!-- <ul>
           {skills.map((skill) => <li class="skill">{skill}</li>)}
           </ul> -->
