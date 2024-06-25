@@ -1,50 +1,26 @@
 ---
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import Service from './Service';
 
 const services =[
-  // "Web developer",
-  "Video maker",
-  // "Kandyan dancer",
-  "Drawing artist",
-  "Wellness massage",
-  // "Photographer amateur",
+  {name: "Desarrolladora web", description: "Llevo más 6 años en la industria IT ", emoji: "👩🏻‍💻"},
+  {name: "Video maker", description: "Esta es la descripción de hacedora de videos", emoji: "📹"},
+  {name: "Kandyan dancer", description: "Llevo más de 8 años estudiando y practicando danza kandyan", emoji: "💃🏽"},
+  // {name: "Musician", description: "Esta es la descripción de mi música"},
+  {name: "Masaje Bienestar", description: "Esta es la descripción de mis masajes de bienestar", emoji: "💆🏻‍♀️"},
+  // {name: "Fotógrafa", description: "Me gusta hacer fotos"},
+  // {name: "Acordeonista", description: "Me gusta tocar acordeón y compartir la música que sale mi pecho"}
   // "The voice of the Utero instructor",
-  // "Musician",
-  // "Acordeonist"
 ]
 
 const { title, url } = Astro.props;
 
 ---
 
-<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+<div class="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
   {
     services.map(service => (
-      // si service tiene espacio, reemplazarlos por un guión para la url /services/${service.replace(/\s/g, '-')
-      <a href={`/services/${service.replace(/\s/g, '-').toLocaleLowerCase() }`}>
-        <Card>
-          <CardHeader>
-            <CardTitle>{service}</CardTitle>
-            <CardDescription></CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p>Card Content</p>
-          </CardContent>
-          <CardFooter>
-            <p>Card Footer</p>
-          </CardFooter>
-        </Card>
-      </a>
+      <Service service={service}/>
       )
     )
   }
-
-</div>
-<!-- hsl(222.2deg 6.2% 18.96%) -->
+  </div>
