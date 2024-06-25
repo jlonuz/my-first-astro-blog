@@ -4,19 +4,28 @@ import Navigation from "./Navigation.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 import Logo from "./Logo.astro";
 ---
-<header class="mb-6">
-    <div>
-        <Hamburger/>
-        <Logo/>
-        <ThemeIcon/>
-    </div>
-    <nav class="nav-container">
-        <Navigation/>
-    </nav>
-</header>
+
+    <header class="w-full">
+        <div>
+            <Hamburger/>
+            <Logo/>
+            <ThemeIcon/>
+        </div>
+        <nav class="nav-container">
+            <Navigation/>
+        </nav>
+    </header>
+
 
 <style>
     header {
+        /* position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0 ;
+        padding: 0 15px;
+        background-color: white;
+        max-width: 100%; */
         display: flex;
         flex-direction: column;
     }

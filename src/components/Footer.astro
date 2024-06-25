@@ -3,8 +3,8 @@ import Social from "./Social.astro"
 ---
 
 <footer class="rounded ">
-    <p>¡Más información sobre mi proyectos en <Social platform="github" username="jlonuz"/>!</p>
-    <div>
+    <p>¡Más información sobre mi proyectos en <strong><Social platform="github" username="jlonuz"/>!</strong></p>
+    <div class="footer-icons">
         <a href="https://www.jlonuz.com" target="_blank">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-laptop"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19l18 0" /><path d="M5 6m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z" /></svg>
         </a>
@@ -29,8 +29,12 @@ import Social from "./Social.astro"
         margin-top: 20px;
     }
 
-    a{
+    a {
         color: rgb(75 85 99 / var(--tw-text-opacity));
+        text-decoration: underline;
+    }
+    .footer-icons {
+        display: flex;
     }
 
 </style>
