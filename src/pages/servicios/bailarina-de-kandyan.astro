@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const images = [
+  '/arriba.jpg',
+  '/yo_kandyan.jpeg',
+  '/kandyan.jpg',
+];
+
+const pageTitle = "Kandyan dancer";
+---
+<BaseLayout>
+    <div class="servicio-header">
+        <span><a href="/servicios">Volver a servicios</a></span>
+    </div>
+    <div class="container mx-auto p-4">
+      <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-12">
+        <div class="md:w-1/3 mb-8 md:mb-0">
+          <img src=/kandyan_face.jpeg height="200" width="300" alt="About Us" class="rounded-lg shadow-lg">
+        </div>
+        <div class="md:w-2/3">
+          <h1 class="text-3xl font-bold mb-4">Mi pasión por la danza Kandyan</h1>
+          <p class="mb-6"><em>
+            Hace más de 8 años que estudio danza kandyan en Chile. He estudiado con distintas escuelas y maestros.</em></p>
+          </p>
+
+        </div>
+      </div>
+      <h1 class="text-2xl font-bold mb-6">Galería de Imágenes</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {images.map((src) => (
+          <div class="overflow-hidden rounded-lg shadow-lg">
+            <img src={src} alt="Gallery Image" class="w-full h-full object-cover"/>
+          </div>
+        ))}
+      </div>
+
+    </div>
+</BaseLayout>
+
+<style>
+    .servicio-header {
+        text-align: right;
+        & a {
+            text-decoration: underline;
+        }
+    }
+</style>
